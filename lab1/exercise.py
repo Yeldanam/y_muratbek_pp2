@@ -4,409 +4,314 @@ print("Hello, World!")  #output:Hello,world!
 
 #task 2
 if 5 > 2:
-  print("Five is greater than two!") 
+  print("YES") #output: YES
 
 #task 3
 #This is a comment
 
 #task 4
-x = 5
-y = "John"
-print(x)    #output:5
-print(y)    #John
+"""This is a comment
+written in 
+more than just one line
+"""
 
 #task 5
-x = 4       
-x = "Sally" #output:Sally
-print(x)
- 
+carname = "Volvo"
 
 #task 6
-x = 5
-y = "John"
-print(type(x)) #output:int
-print(type(y)) #output:str
-
+x = 50
 
 #task 7
-x, y, z = "Orange", "Banana", "Cherry"
-print(x)    
-print(y)
-print(z) 
-#output:
-#Orange
-#Banana
-#Cherry
-
-#task 8
-x = y = z = "Orange"
-print(x)
-print(y)
-print(z)
-#output:
-#Orange
-#Orange
-#Orange
-
-#task 9
-fruits = ["apple", "banana", "cherry"]
-x, y, z = fruits
-print(x)        #apple
-print(y)        #banana
-print(z)        #cherry
-
-#task 10
-x = "Python is awesome"
-print(x)        #Python is awesome
-
-#task 11
-x = "Python"
-y = "is"
-z = "awesome"
-print(x, y, z) #Python is awesome
-
-#task 12
-x = "Python "
-y = "is "
-z = "awesome"
-print(x + y + z) #Python is awesome
-
-#task 13
 x = 5
 y = 10
-print(x + y) #15
+print(x + y)  #output: 15
+
+#task 8
+x = 5
+y = 10
+z = x + y
+print(z)    #output: 15
+
+#task 9
+x, y, z = "Orange", "Banana", "Cherry"
+
+#task 10
+x = y = z = "Orange"
+
+#task 11
+def myfunc():
+global x
+x = "fantastic"
+
+#task 12
+x = 5
+print(type(x))    #output: int
+
+#task 13
+x = "Hello World"
+print(type(x))    #output: str
 
 #task 14
-x = 5
-y = "John"
-print(x, y)  #5,John
+x = 20.5
+print(type(x))    #output: float
 
 #task 15
-x = "awesome"
-def myfunc():
-  print("Python is " + x)
-
-myfunc()      #Python is awesome
-myfunc()      
-
+x = ["apple", "banana", "cherry"]
+print(type(x))    #output: list
 
 #task 16
-x = "awesome"
-def myfunc():
-  x = "fantastic"
-  print("Python is " + x)
-myfunc()
-print("Python is " + x)
-#Python is fantastic
-#Python is awesome
+x = ("apple", "banana", "cherry")
+print(type(x))    #output: tuple
 
 #task 17
-def myfunc():
-  global x
-  x = "fantastic"
-myfunc()
-print("Python is " + x)
-#Python is fantastic
+x = {"name" : "John", "age" : 36}
+print(type(x))    #output: dict
 
 #task 18
-x = "awesome"
-def myfunc():
-  global x
-  x = "fantastic"
-myfunc()
-print("Python is " + x)
-#Python is fantastic
-
+x = True
+print(type(x))    #output: bool
 
 #task 19
 x = 5
-print(type(x))
-#int
+x = float(x)
 
 #task 20
-x = 1
-y = 35656222554887711
-z = -3255522
-print(type(x))
-print(type(y))
-print(type(z))
-#int
-#int
-#int
+x = 5.5
+x = int(x)    
 
 #task 21
-x = 1.10
-y = 1.0
-z = -35.59
-print(type(x))
-print(type(y))
-print(type(z))
-#float
-#float
-#float
+x = 5
+x = complex(x)
 
 #task 22
-x = 35e3
-y = 12E4
-z = -87.7e100
-print(type(x))
-print(type(y))
-print(type(z))
-#float
-#float
-#float
+x = "Hello World"
+print(len(x))
 
 #task 23
-print("Hello")
-print('Hello')
-#Hello
-#Hello
+txt = "Hello World"
+x = txt[0]
 
 #task 24
-a = "Hello"
-print(a)
-#Hello
+txt = "Hello World"
+x = txt[2:5]
 
 #task 25
-a = """Lorem ipsum dolor sit amet,
-consectetur adipiscing elit,
-sed do eiusmod tempor incididunt
-ut labore et dolore magna aliqua."""
-print(a)
-#Lorem ipsum dolor sit amet,
-#consectetur adipiscing elit,
-#sed do eiusmod tempor incididunt
-#ut labore et dolore magna aliqua.
-
+txt = " Hello World "
+x = txt.strip()
 
 #task 26
-a = "Hello, World!"
-print(a[1])
-#e
+txt = "Hello World"
+txt = txt.upper()
 
 #task 27
-for x in "banana":
-  print(x)
-#n
-#a
-#n
-#a
+txt = "Hello World"
+txt = txt.lower()
 
 #task 28
-a = "Hello, World!"
-print(len(a))
-#13
+txt = "Hello World"
+txt = txt.replace("H","J")
 
 #task 29
-txt = "The best things in life are free!"
-print("free" in txt)
-#True
+age = 36
+txt = "My name is John, and I am {}"
+print(txt.format(age))
 
 #task 30
-txt = "The best things in life are free!"
-if "free" in txt:
-  print("Yes, 'free' is present.")
-  #Yes, 'free' is present.
+print(10 > 9)   #True
 
 #task 31
-txt = "The best things in life are free!"
-print("expensive" not in txt)
-#True
+print(10 == 9)    #False
 
 #task 32
-txt = "The best things in life are free!"
-if "expensive" not in txt:
-  print("No, 'expensive' is NOT present.")
-#No, 'expensive' is NOT present.
+print(10 < 9)   #False
 
 #task 33
-b = "Hello, World!"
-print(b[2:5])
-#llo
+print(bool("abc"))    #True
 
 #task 34
-b = "Hello, World!"
-print(b[:5])
-#Hello
+print(bool(0))    #False
 
 #task 35
-b = "Hello, World!"
-print(b[2:])
-#llo, World!
+print(10 * 5)     #50
 
 #task 36
-b = "Hello, World!"
-print(b[-5:-2])
-#orl
+print(10 / 2)     #5
 
 #task 37
-a = "Hello, World!"
-print(a.upper())
-#HELLO, WORLD!
+fruits = ["apple", "banana"]
+if "apple" in fruits:
+  print("Yes, apple is a fruit!")
 
 #task 38
-a = "Hello, World!"
-print(a.lower())
-#Hello, World!
+if 5 != 10:
+  print("5 and 10 is not equal")
 
 #task 39
-a = " Hello, World! "
-print(a.strip()) 
-#Hello, World! 
-
+if 5 == 10 or 4 == 4:
+  print("At least one of the statements is true")
 
 #task 40
-a = "Hello, World!"
-print(a.replace("H", "J"))
-#Jello, World!
+fruits = ["apple", "banana", "cherry"]
+print(fruits[1])
 
 #task 41
-a = "Hello, World!"
-print(a.split(",")) 
-#['Hello', ' World!']
-
+fruits = ["apple", "banana", "cherry"]
+fruits[0] = "kiwi"
 
 #task 42
-a = 200
-b = 33
-
-if b > a:
-  print("b is greater than a")
-else:
-  print("b is not greater than a")
-#b is not greater than a
-
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
 
 #task 43
-print(bool("Hello"))
-print(bool(15))
-#True
-#True
+fruits = ["apple", "banana", "cherry"]
+fruits.insert(1, "lemon")
 
 #task 44
-x = "Hello"
-y = 15
-print(bool(x))
-print(bool(y))
-#True
-#True
+fruits = ["apple", "banana", "cherry"]
+fruits.remove("banana")
 
 #task 45
-class myclass():
-  def __len__(self):
-    return 0
-myobj = myclass()
-print(bool(myobj))
-#False
+fruits = ["apple", "banana", "cherry"]
+print(fruits[-1])
 
 #task 46
-def myFunction() :
-  return True
-print(myFunction())
-#True
+fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+print(fruits[2:5])
 
 #task 47
-def myFunction() :
-  return True
-if myFunction():
-  print("YES!")
-else:
-  print("NO!")
-#YES!
+fruits = ["apple", "banana", "cherry"]
+print(len(fruits))
 
 #task 48
-print(10 + 5)
-#15
+fruits = ("apple", "banana", "cherry")
+print(fruits[0])
 
 #task 49
-thislist = ["apple", "banana", "cherry"]
-print(thislist)
-#['apple', 'banana', 'cherry']
+fruits = ("apple", "banana", "cherry")
+print(len(fruits))
 
 #task 50
-thislist = ["apple", "banana", "cherry", "apple", "cherry"]
-print(thislist)
-#['apple', 'banana', 'cherry', 'apple', 'cherry']
+fruits = ("apple", "banana", "cherry")
+print(fruits[-1])
 
 #task 51
-thislist = ["apple", "banana", "cherry"]
-print(len(thislist))
-#3
-
+fruits = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(fruits[2:5])
 
 #task 52
-thistuple = ("apple", "banana", "cherry")
-print(thistuple)
-#('apple', 'banana', 'cherry')
-
+fruits = {"apple", "banana", "cherry"}
+if "apple" in fruits:
+  print("Yes, apple is a fruit!")
 
 #task 53
-thistuple = ("apple", "banana", "cherry", "apple", "cherry")
-print(thistuple)
-#apple,banana,cherry,apple,cherry
+fruits = {"apple", "banana", "cherry"}
+fruits.add("orange")
 
 #task 54
-thistuple = ("apple", "banana", "cherry")
-print(len(thistuple))
-#3
+fruits = {"apple", "banana", "cherry"}
+more_fruits = ["orange", "mango", "grapes"]
+fruits.update(more_fruits)
 
 #task 55
-thistuple = ("apple",)
-print(type(thistuple))
-#tuple
+fruits = {"apple", "banana", "cherry"}
+fruits.remove("banana")
 
 #task 56
-thistuple = ("apple")
-print(type(thistuple))
-#str
+fruits = {"apple", "banana", "cherry"}
+fruits.discard("banana")
+
+#task 57
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(car.get("model"))
 
 #task 58
-thisset = {"apple", "banana", "cherry"}
-print(thisset)
-#cherry , apple , banana
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car["year"] = 2020
 
 #task 59
-thisdict = {
+car =	{
   "brand": "Ford",
   "model": "Mustang",
   "year": 1964
 }
-print(thisdict)
-#brand : Ford, model : Mustang , year : 1964
+car["color"] = "red"
 
 #task 60
-thisdict = {
+car =	{
   "brand": "Ford",
   "model": "Mustang",
   "year": 1964
 }
-print(thisdict["brand"])
-#Ford
+car.pop("model")
 
 #task 61
-a = 33
-b = 200
-if b > a:
-  print("b is greater than a")
-#b is greater than a
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car.clear()
 
 #task 62
-a = 33
-b = 33
-if b > a:
-  print("b is greater than a")
-elif a == b:
-  print("a and b are equal")
-#a and b are equal
+a = 50
+b = 10
+if a > b:
+  print("Hello World")
 
 #task 63
-a = 200
-b = 33
-if b > a:
-  print("b is greater than a")
-elif a == b:
-  print("a and b are equal")
+a = 50
+b = 10
+if a != b:
+  print("Hello World")
+
+#task 64
+a = 50
+b = 10
+if a == b:
+  print("Yes")
 else:
-  print("a is greater than b")
-#a is greater than b
+  print("No")
+
+#task 65
+a = 50 
+b = 10
+if a == b:
+  print("1")
+elif a > b:
+  print("2")
+else:
+  print("3")
+
+#task 66
+if a == b and c == d:
+  print("Hello")
+
+#task 67
+if a == b or c == d:
+  print("Hello")
+
+#task 68
+if 5 > 2:
+    print("YES")
+
+#task 69
+a = 2
+b = 5
+print("YES") if a == b else  print("NO")
+
+#task 70
+a = 2
+b = 50
+c = 2
+if a == c or b == c:
+  print("YES")
+
 
