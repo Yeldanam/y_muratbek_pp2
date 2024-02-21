@@ -1,482 +1,482 @@
-#Python Functions
-#1
-def my_function():
-  print("Hello from a function")
-
-my_function()
-#terminal:
-# Hello from a function
-
-#2
-def my_function(fname):
-  print(fname + " Refsnes")
-
-my_function("Emil")
-my_function("Tobias")
-my_function("Linus")
-# terminal:
-# Emil Refsnes
-# Tobias Refsnes
-# Linus Refsnes
-
-#3
-def my_function(fname):
-  print(fname + " Refsnes")
-my_function("Emil")
-my_function("Tobias")
-my_function("Linus")
-#terminal:
-# Emil Refsnes
-# Tobias Refsnes
-# Linus Refsnes
-
-#4
-def my_function(*kids):
-  print("The youngest child is " + kids[2])
-
-my_function("Emil", "Tobias", "Linus")
-#terminal:
-#The youngest child is Linus
-
-#5
-def my_function(child3, child2, child1):
-  print("The youngest child is " + child3)
-my_function(child1 = "Emil", child2 = "Tobias", child3 = "Linus")
-#terminal:
-# The youngest child is Linus
-
-#6
-def my_function(**kid):
-  print("His last name is " + kid["lname"])
-my_function(fname = "Tobias", lname = "Refsnes")
-#terminal:
-# His last name is Refsnes
-
-#7
-def my_function(country = "Norway"):
-  print("I am from " + country)
-#terminal:
-my_function("Sweden")
-my_function("India")
-my_function()
-my_function("Brazil")
-#terminal:
-# I am from Sweden
-# I am from India
-# I am from Norway
-# I am from Brazil
-
-#8
-def my_function(food):
-  for x in food:
-    print(x)
-fruits = ["apple", "banana", "cherry"]
-my_function(fruits)
-#terminal:
+# Python Iterators, Generators​ 
+# 1
+ mytuple = ("apple", "banana", "cherry")
+myit = iter(mytuple)
+print(next(myit))
+print(next(myit))
+print(next(myit))
+# output:
 # apple
 # banana
 # cherry
 
-#9
-def my_function(x):
-  return 5 * x
-print(my_function(3))
-print(my_function(5))
-print(my_function(9))
-#terminal:
-# 15
-# 25
-# 45
-
-#10
-def myfunction():
-  pass
-# having an empty function definition like this, would raise an error without the pass statement
-
-#11
-def my_function(x, /):
-  print(x)
-my_function(3)
-#terminal:
-# 3
-
-#12
-def my_function(x):
-  print(x)
-my_function(x = 3)
-#terminal:
-# 3
-
-#13
-def my_function(*, x):
-  print(x)
-my_function(x = 3)
-#terminal:
-# 3
-
-# 14
-def my_function(x):
-  print(x)
-my_function(3)
-#terminal:
-# 3
-
-#15
-def my_function(a, b, /, *, c, d):
-  print(a + b + c + d)
-my_function(5, 6, c = 7, d = 8)
-#terminal:
-# 26
-
-#16
-def tri_recursion(k):
-  if(k > 0):
-    result = k + tri_recursion(k - 1)
-    print(result)
-  else:
-    result = 0
-  return result
-print("\n\nRecursion Example Results")
-tri_recursion(6)
-#terminal:
-# Recursion Example Results
-# 1
-# 3
-# 6
-# 10
-# 15
-# 21
-
-
-
-
-# Python Lambda
-# 1
-x = lambda a: a + 10
-print(x(5))
-#output:
-#15
-
 # 2
-x = lambda a, b: a * b
-print(x(5, 6))
-#output:
-# 30
-
-# 3
-x = lambda a, b, c: a + b + c
-print(x(5, 6, 2))
-#output:
-# 13
-
-# 4
-def myfunc(n):
-  return lambda a : a * n
-mydoubler = myfunc(2)
-print(mydoubler(11))
-#output:
-# 22
-
-# 5
-def myfunc(n):
-  return lambda a : a * n
-mytripler = myfunc(3)
-print(mytripler(11))
-# 33
-
-# 6
-def myfunc(n):
-  return lambda a : a * n
-mydoubler = myfunc(2)
-mytripler = myfunc(3)
-print(mydoubler(11)) 
-print(mytripler(11))
-#output:
-# 22
-# 33
-
-
-
-
-# Python Classes and Objects
-# 1
-class MyClass:
-  x = 5
-#output:
-#<class '__main__.MyClass'>
-
-#2
-class MyClass:
-  x = 5
-
-p1 = MyClass()
-print(p1.x)
-#output:
-# 5
-
-#3
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-
-p1 = Person("John", 36)
-
-print(p1.name)
-print(p1.age)
+mystr = "banana"
+myit = iter(mystr)
+print(next(myit))
+print(next(myit))
+print(next(myit))
+print(next(myit))
+print(next(myit))
+print(next(myit))
 # output:
-# John
-# 36
-
-#4
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-
-p1 = Person("John", 36)
-
-print(p1)
-# <__main__.Person object at 0x15039e602100>
-
-#5
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-
-  def __str__(self):
-    return f"{self.name}({self.age})"    
-
-p1 = Person("John", 36)
-
-print(p1)
-# John(36)
-
-#6
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-
-  def myfunc(self):
-    print("Hello my name is " + self.name)
-
-p1 = Person("John", 36)
-p1.myfunc()
-#Hello my name is John
-
-
-
-
-
-
-
-# Python Inheritance
-# 1
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-p1 = Person("John", 36)
-print(p1.name)
-print(p1.age)
-#output:
-# John
-# 36
-
-#2
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-p1 = Person("John", 36)
-print(p1)
-#output:
-# <__main__.Person object at 0x15039e602100>
+# b
+# a
+# n
+# a
+# n
+# a
 
 # 3
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-  def __str__(self):
-    return f"{self.name}({self.age})"
-p1 = Person("John", 36)
-print(p1)
+mytuple = ("apple", "banana", "cherry")
+for x in mytuple:
+  print(x)
 #output:
-# John(36)
+# apple
+# banana
+# cherry
 
 # 4
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-  def myfunc(self):
-    print("Hello my name is " + self.name)
-p1 = Person("John", 36)
-p1.myfunc()
+mystr = "banana"
+for x in mystr:
+  print(x)
 #output:
-# Hello my name is John
+# b
+# a
+# n
+# a
+# n
+# a
 
 # 5
-class Person:
-  def __init__(mysillyobject, name, age):
-    mysillyobject.name = name
-    mysillyobject.age = age
-  def myfunc(abc):
-    print("Hello my name is " + abc.name)
-p1 = Person("John", 36)
-p1.myfunc()
+class MyNumbers:
+  def __iter__(self):
+    self.a = 1
+    return self
+  def __next__(self):
+    x = self.a
+    self.a += 1
+    return x
+myclass = MyNumbers()
+myiter = iter(myclass)
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
 #output:
-# Hello my name is John
+# 1
+# 2
+# 3
+# 4
+# 5
 
 # 6
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-  def myfunc(self):
-    print("Hello my name is " + self.name)
-p1 = Person("John", 36)
-p1.age = 40
-print(p1.age)
+class MyNumbers:
+  def __iter__(self):
+    self.a = 1
+    return self
+  def __next__(self):
+    if self.a <= 20:
+      x = self.a
+      self.a += 1
+      return x
+    else:
+      raise StopIteration
+myclass = MyNumbers()
+myiter = iter(myclass)
+for x in myiter:
+  print(x)
 #output:
-# 40
-
-# 7
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-  def myfunc(self):
-    print("Hello my name is " + self.name)
-p1 = Person("John", 36)
-del p1.age
-print(p1.age)
-#output:
-Traceback (most recent call last):
-  File "demo_class7.py", line 13, in <module>
-    print(p1.age)
-AttributeError: 'Person' object has no attribute 'age'
-
-# 8
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
-  def myfunc(self):
-    print("Hello my name is " + self.name)
-p1 = Person("John", 36)
-del p1
-#output:
-print(p1)
-Traceback (most recent call last):
-  File "demo_class8.py", line 13, in <module>
-    print(p1)
-NameError: 'p1' is not defined
-
-# 9
-class Person:
-  pass
-# having an empty class definition like this, would raise an error without the pass statement
-
-
-
-
-# Python Inheritance
 # 1
-class Person:
-  def __init__(self, fname, lname):
-    self.firstname = fname
-    self.lastname = lname
-  def printname(self):
-    print(self.firstname, self.lastname)
-#Use the Person class to create an object, and then execute the printname method:
-x = Person("John", "Doe")
-x.printname()
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+# 10
+# 11
+# 12
+# 13
+# 14
+# 15
+# 16
+# 17
+# 18
+# 19
+# 20
+
+
+
+
+# Python Scope​ 
+# 1
+def myfunc():
+  x = 300
+  print(x)
+myfunc()
 #output:
-# John Doe
+# 300
 
 # 2
-class Person:
-  def __init__(self, fname, lname):
-    self.firstname = fname
-    self.lastname = lname
-  def printname(self):
-    print(self.firstname, self.lastname)
-class Student(Person):
-  pass
-x = Student("Mike", "Olsen")
-x.printname()
+def myfunc():
+  x = 300
+  def myinnerfunc():
+    print(x)
+  myinnerfunc()
+myfunc()
 #output:
-# Mike Olsen
+# 300
 
 # 3
-class Person:
-  def __init__(self, fname, lname):
-    self.firstname = fname
-    self.lastname = lname
-  def printname(self):
-    print(self.firstname, self.lastname)
-class Student(Person):
-  def __init__(self, fname, lname):
-    Person.__init__(self, fname, lname)
-x = Student("Mike", "Olsen")
-x.printname()
+x = 300
+def myfunc():
+  print(x)
+myfunc()
+print(x)
 #output:
-# Mike Olsen
+# 300
+# 300
 
 # 4
-class Person:
-  def __init__(self, fname, lname):
-    self.firstname = fname
-    self.lastname = lname
-  def printname(self):
-    print(self.firstname, self.lastname)
-class Student(Person):
-  def __init__(self, fname, lname):
-    super().__init__(fname, lname)
-x = Student("Mike", "Olsen")
-x.printname()
+x = 300
+def myfunc():
+  x = 200
+  print(x)
+myfunc()
+print(x)
 #output:
-# Mike Olsen
+# 200
+# 300
 
 # 5
-class Person:
-  def __init__(self, fname, lname):
-    self.firstname = fname
-    self.lastname = lname
-  def printname(self):
-    print(self.firstname, self.lastname)
+def myfunc():
+  global x
+  x = 300
+myfunc()
+print(x)
 #output:
-# 2019
+# 300
 
 # 6
-class Student(Person):
-  def __init__(self, fname, lname):
-    super().__init__(fname, lname)
-    self.graduationyear = 2019
-x = Student("Mike", "Olsen")
-print(x.graduationyear)
+x = 300
+def myfunc():
+  global x
+  x = 200
+myfunc()
+print(x)
 #output:
-# 2019
+# 200
+
+
+
+
+# Python Modules​ 
+# 1
+import mymodule
+mymodule.greeting("Jonathan")
+#output:
+# Hello, Jonathan
+
+# 2
+import mymodule
+a = mymodule.person1["age"]
+print(a)
+#output:
+# 36
+
+# 3
+import mymodule as mx
+a = mx.person1["age"]
+print(a)
+#output:
+# 36
+
+# 4
+import platform
+x = platform.system()
+print(x)
+#output:
+# Windows
+
+# 5
+import platform
+x = dir(platform)
+print(x)
+#output:
+# ['DEV_NULL', '_UNIXCONFDIR', 'WIN32_CLIENT_RELEASES', 'WIN32_SERVER_RELEASES',
+# '__builtins__', '__cached__', '__copyright__', '__doc__', '__file__', '__loader
+# __', '__name__', '__package __', '__spec__', '__version__', '_default_architecture',
+# '_dist_try_harder', '_follow_symlinks', '_ironpython26_sys_version_parser', 
+# '_ironpython_sys_version_parser', '_java_getprop', '_libc_search', '_linux_distribution', 
+# '_lsb_release_version', '_mac_ver_xml', '_node', '_norm_version', '_perse_release_file', 
+# '_platform', '_platform_cache', '_pypy_sys_version_parser', '_release_filename', 
+# '_release_version', '_supported_dists', '_sys_version', '_sys_version_cache', 
+# '_sys_version_parser', '_syscmd_file', '_syscmd_uname', '_syscmd_ver', '_uname_cache', 
+# '_ver_output', 'architecture', 'collections', 'dist', 'java_ver', 'libc_ver', 'linux_distribution', 
+# 'mac_ver', 'machine', 'node', 'os', 'platform', 'popen', 'processor', 'python_branch', 'python_build',
+# 'python_compiler', 'python_implementation', 'python_revision', 'python_version', 'python_version_tuple', 
+# 're', 'release', 'subprocess', 'sys', 'system', 'system_aliases', 'uname', 'uname_result', 'version',
+# 'warnings', 'win32_ver']
+
+# Python Dates​ 
+# 1
+import datetime
+x = datetime.datetime.now()
+print(x)
+#output:
+# 2024-02-21 23:34:25.059001
+
+# 2
+import datetime
+x = datetime.datetime.now()
+print(x.year)
+print(x.strftime("%A"))
+#output:
+# 2024
+# Wednesday
+
+# 3
+import datetime
+x = datetime.datetime(2020, 5, 17)
+print(x)
+#output:
+# 2020-05-17 00:00:00
+
+# 4
+import datetime
+x = datetime.datetime(2018, 6, 1)
+print(x.strftime("%B"))
+#output:
+# June
+
+
+
+
+# Python Math​ 
+# 1
+x = min(5, 10, 25)
+y = max(5, 10, 25)
+print(x)
+print(y)
+#output:
+# 5
+# 25
+
+# 2
+x = abs(-7.25)
+print(x)
+#output:
+# 7.25
+
+# 3
+x = pow(4, 3)
+print(x)
+#output:
+# 64
+
+# 4
+import math
+x = math.sqrt(64)
+print(x)
+#output:
+# 8.0
+
+# 5
+import math
+x = math.ceil(1.4)
+y = math.floor(1.4)
+print(x)
+print(y)
+#output:
+# 2
+# 1
+
+# 6
+import math
+x = math.pi
+print(x)
+#output:
+# 3.141592653589793
+
+# Python JSON​
+# 1
+import json
+x = '{ "name":"John", "age":30, "city":"New York"}'
+y = json.loads(x)
+print(y["age"])
+#output:
+#30
+
+# 2
+import json
+x = {
+  "name": "John",
+  "age": 30,
+  "city": "New York"
+}
+y = json.dumps(x)
+print(y)
+#output:
+# {"name": "John", "age": 30, "city": "New York"}
+# 3
+import json
+print(json.dumps({"name": "John", "age": 30}))
+print(json.dumps(["apple", "bananas"]))
+print(json.dumps(("apple", "bananas")))
+print(json.dumps("hello"))
+print(json.dumps(42))
+print(json.dumps(31.76))
+print(json.dumps(True))
+print(json.dumps(False))
+print(json.dumps(None))
+#output:
+# {"name": "John", "age": 30}
+# ["apple", "bananas"]
+# ["apple", "bananas"]
+# "hello"
+# 42
+# 31.76
+# true
+# false
+# null
+
+# 4
+import json
+x = {
+  "name": "John",
+  "age": 30,
+  "married": True,
+  "divorced": False,
+  "children": ("Ann","Billy"),
+  "pets": None,
+  "cars": [
+    {"model": "BMW 230", "mpg": 27.5},
+    {"model": "Ford Edge", "mpg": 24.1}
+  ]
+}
+y = json.dumps(x)
+print(y)
+#output:
+# {"name": "John", "age": 30, "married": true, "divorced": false, 
+# "children": ["Ann","Billy"], "pets": null, "cars": [{"model": "BMW 230", "mpg": 27.5}, 
+# {"model": "Ford Edge", "mpg": 24.1}]}
+
+# 5
+import json
+x = {
+  "name": "John",
+  "age": 30,
+  "married": True,
+  "divorced": False,
+  "children": ("Ann","Billy"),
+  "pets": None,
+  "cars": [
+    {"model": "BMW 230", "mpg": 27.5},
+    {"model": "Ford Edge", "mpg": 24.1}
+  ]
+}
+print(json.dumps(x, indent=4))
+#output:
+# {
+#     "name": "John",
+#     "age": 30,
+#     "married": true,
+#     "divorced": false,
+#     "children": [
+#         "Ann",
+#         "Billy"
+#     ],
+#     "pets": null,
+#     "cars": [
+#         {
+#             "model": "BMW 230",
+#             "mpg": 27.5
+#         },
+#         {
+#             "model": "Ford Edge",
+#             "mpg": 24.1
+#         }
+#     ]
+# }
+
+# 6
+import json
+x = {
+  "name": "John",
+  "age": 30,
+  "married": True,
+  "divorced": False,
+  "children": ("Ann","Billy"),
+  "pets": None,
+  "cars": [
+    {"model": "BMW 230", "mpg": 27.5},
+    {"model": "Ford Edge", "mpg": 24.1}
+  ]
+}
+print(json.dumps(x, indent=4, separators=(". ", " = ")))
+#output:
+# {
+#     "name" = "John".
+#     "age" = 30.
+#     "married" = true.
+#     "divorced" = false.
+#     "children" = [
+#         "Ann".
+#         "Billy"
+#     ].
+#     "pets" = null.
+#     "cars" = [
+#         {
+#             "model" = "BMW 230".
+#             "mpg" = 27.5
+#         }.
+#         {
+#             "model" = "Ford Edge".
+#             "mpg" = 24.1
+#         }
+#     ]
+# }
 
 # 7
-class Person:
-  def __init__(self, fname, lname):
-    self.firstname = fname
-    self.lastname = lname
-  def printname(self):
-    print(self.firstname, self.lastname)
-class Student(Person):
-  def __init__(self, fname, lname, year):
-    super().__init__(fname, lname)
-    self.graduationyear = year
-  def welcome(self):
-    print("Welcome", self.firstname, self.lastname, "to the class of", self.graduationyear)
-x = Student("Mike", "Olsen", 2019)
-x.welcome()
+import json
+x = {
+  "name": "John",
+  "age": 30,
+  "married": True,
+  "divorced": False,
+  "children": ("Ann","Billy"),
+  "pets": None,
+  "cars": [
+    {"model": "BMW 230", "mpg": 27.5},
+    {"model": "Ford Edge", "mpg": 24.1}
+  ]
+}
+print(json.dumps(x, indent=4, sort_keys=True))
 #output:
-# Welcome Mike Olsen to the class of 2019
+# {
+#     "age": 30,
+#     "cars": [
+#         {
+#             "model": "BMW 230",
+#             "mpg": 27.5
+#         },
+#         {
+#             "model": "Ford Edge",
+#             "mpg": 24.1
+#         }
+#     ],
+#     "children": [
+#         "Ann",
+#         "Billy"
+#     ],
+#     "divorced": false,
+#     "married": true,
+#     "name": "John",
+#     "pets": null
+# }
+
 
