@@ -1,8 +1,7 @@
 # 1 - Write a Python program to convert degree to radian.
 #  Input degree: 15
 #  Output radian: 0.261904
-#  import math
-
+import math
 def degree_to_radian(degrees):
     radians = degrees * (math.pi / 180)
     return radians
@@ -18,10 +17,9 @@ if __name__ == "__main__":
 #   Base, first value: 5
 #   Base, second value: 6
 #   Expected Output: 27.5
-#  def trapezoid_area(height, base1, base2):
-#     area = 0.5 * (base1 + base2) * height
-#     return area
-
+ def trapezoid_area(height, base1, base2):
+    area = 0.5 * (base1 + base2) * height
+    return area
 def main():
     height = float(input("Height: "))
     base1 = float(input("Base, first value: "))
